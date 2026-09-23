@@ -1,3 +1,3 @@
-# tinder_v1
+# matchbox-tinder-
 
-A new Flutter project.
+Recriação da v1 do app matchbox (tinder)
