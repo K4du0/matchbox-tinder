@@ -14,15 +14,12 @@ class LikeScreen extends StatefulWidget {
 class _LikeScreenState extends State<LikeScreen> {
   final PageController _pageController = PageController();
 
-  // Local, in-memory list of candidates. `mockProfiles` stands in for a
-  // future API/database call — everything past this line only ever reads
-  // `Profile` objects, so swapping the source later doesn't touch the UI.
+
   final List<Profile> _profiles = List.of(mockProfiles);
 
   int _currentIndex = 0;
 
-  // Kept for future use (e.g. a real Matches screen) without adding any
-  // UI right now, per the current scope.
+
   final List<Profile> _likedProfiles = [];
 
   @override
@@ -155,8 +152,6 @@ class _LikeScreenState extends State<LikeScreen> {
   }
 }
 
-/// Photo + name + "friends & interests" line, framed as a bordered,
-/// slightly rounded, slightly elevated card — matching the reference image.
 class _ProfileCard extends StatelessWidget {
   final Profile profile;
 
@@ -181,9 +176,7 @@ class _ProfileCard extends StatelessWidget {
               ),
             ],
           ),
-          // Landscape-ish photo with the name and "friends & interests" line
-          // overlaid directly on top of it, matching the reference image —
-          // there is no separate text block below the photo.
+          
           child: ClipRRect(
             borderRadius: BorderRadius.circular(3),
             child: AspectRatio(
@@ -273,8 +266,7 @@ class _ProfileCard extends StatelessWidget {
   }
 }
 
-/// "Things In Common" / "Friends In Common" panel: title, a 2x2 photo
-/// collage, and a trailing "And N more..." line.
+
 class _CommonInfoBox extends StatelessWidget {
   final String title;
   final String moreText;

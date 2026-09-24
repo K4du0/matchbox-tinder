@@ -3,12 +3,7 @@ import '../themes/app_colors.dart';
 import '../models/profile.dart';
 import '../models/message.dart';
 
-/// Individual conversation with a single match. Reached by tapping a row on
-/// the Matches screen (`Navigator.push`, not a named route — no second
-/// navigation system, just the existing `Navigator`). Unlike the other
-/// three screens, this one does not show the shared [TopNavigation] tab
-/// bar: the reference image replaces it with its own header (Back + name),
-/// which is normal for a drill-down/detail screen.
+
 class DirectScreen extends StatefulWidget {
   final Profile match;
 
@@ -26,8 +21,7 @@ class _DirectScreenState extends State<DirectScreen> {
   @override
   void initState() {
     super.initState();
-    // Copy so this conversation's local edits don't mutate the shared mock
-    // data if the same match is opened again.
+    
     _messages = List.of(mockConversations[widget.match.name] ?? const []);
   }
 
@@ -107,8 +101,6 @@ class _DirectScreenState extends State<DirectScreen> {
   }
 }
 
-/// Back button (arrow/tag shape) + conversation partner's name, replacing
-/// the tab bar on this screen.
 class _DirectHeader extends StatelessWidget {
   final String name;
 
@@ -140,9 +132,7 @@ class _DirectHeader extends StatelessWidget {
   }
 }
 
-/// The pointed "tag" shaped Back button from the reference image — a
-/// pentagon (rectangle with a leftward point) with a light-to-dark gradient
-/// fill, deliberately not swapped for a generic Material back icon.
+
 class _BackButton extends StatelessWidget {
   final VoidCallback onTap;
 
@@ -213,10 +203,7 @@ class _BackButtonPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
-/// One chat message: small avatar, then sender name + timestamp on one
-/// line, with the message text below. Every message uses the same layout
-/// regardless of sender — the reference identifies who's talking only via
-/// name + photo, not through left/right bubble alignment.
+
 class _MessageRow extends StatelessWidget {
   final Message message;
 
@@ -289,7 +276,7 @@ class _MessageRow extends StatelessWidget {
   }
 }
 
-/// Bottom text field + Send button.
+
 class _ComposeBar extends StatelessWidget {
   final TextEditingController controller;
   final VoidCallback onSend;

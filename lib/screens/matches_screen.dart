@@ -30,10 +30,7 @@ class MatchesScreen extends StatelessWidget {
 
                 const SizedBox(height: 12),
 
-                // Everyone in `mockProfiles` (the same people shown on the
-                // Like or Not screen) is treated as a match, so the two
-                // screens stay consistent instead of using a second,
-                // unrelated list of names.
+                
                 for (final profile in mockProfiles) ...[
                   _MatchRow(profile: profile),
                   const SizedBox(height: 10),

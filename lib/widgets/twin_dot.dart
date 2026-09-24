@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import '../themes/app_colors.dart';
 
-/// The small pair of overlapping teal/orange dots that precede a
-/// "N friends & M interests..." line in the reference images. Shared by
-/// the Like or Not screen and the Matches list so it isn't duplicated.
+
 class TwinDot extends StatelessWidget {
   const TwinDot({super.key});
 
